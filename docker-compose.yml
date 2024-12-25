@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  chat-server:
+    build: .
+    environment:
+      - CHAT_PORT=${CHAT_PORT}
+      - MAX_USERS=${MAX_USERS} 
+    ports:
+      - "${CHAT_PORT}:${CHAT_PORT}"
+    volumes:
+      - .:/app 
+    container_name: chat-server
+    
